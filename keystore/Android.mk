@@ -73,21 +73,21 @@ LOCAL_MODULE_TAGS := debug
 LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
 include $(BUILD_EXECUTABLE)
 
-include $(CLEAR_VARS)
-ifeq ($(USE_32_BIT_KEYSTORE), true)
-LOCAL_MULTILIB := 32
-endif
-LOCAL_CFLAGS := -Wall -Wextra -Werror -Wno-unused-parameter -DKEYMASTER_NAME_TAGS
-LOCAL_SRC_FILES := keystore_cli_v2.cpp
-LOCAL_SHARED_LIBRARIES := \
-	libchrome \
-	libkeymaster_messages \
-	libkeystore_binder
-LOCAL_MODULE := keystore_cli_v2
-LOCAL_MODULE_TAGS := debug
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/include external/gtest/include
-LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
-include $(BUILD_EXECUTABLE)
+#include $(CLEAR_VARS)
+#ifeq ($(USE_32_BIT_KEYSTORE), true)
+#LOCAL_MULTILIB := 32
+#endif
+#LOCAL_CFLAGS := -Wall -Wextra -Werror -Wno-unused-parameter -DKEYMASTER_NAME_TAGS
+#LOCAL_SRC_FILES := keystore_cli_v2.cpp
+#LOCAL_SHARED_LIBRARIES := \
+#	libchrome \
+#	libkeymaster_messages \
+#	libkeystore_binder
+#LOCAL_MODULE := keystore_cli_v2
+#LOCAL_MODULE_TAGS := debug
+#LOCAL_C_INCLUDES := $(LOCAL_PATH)/include external/gtest/include
+#LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
+#include $(BUILD_EXECUTABLE)
 
 # Library for keystore clients
 include $(CLEAR_VARS)
